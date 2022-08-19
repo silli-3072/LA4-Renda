@@ -28,11 +28,28 @@ class ViewController: UIViewController {
     @IBAction func tapTapButton(){
         tapCount = tapCount + 1
         countLabel.text = String(tapCount)
+        
+        textColor()
     }
     
     @IBAction func tapClearButton(){
         tapCount = 0
         countLabel.text = String(tapCount)
+        
+        textColor()
+    }
+    
+    func textColor(){
+        if tapCount >= 10 {
+            countLabel.textColor = UIColor.red
+            countLabel.text = String(tapCount)
+        } else if tapCount >= 100 {
+            countLabel.textColor = UIColor.blue
+            countLabel.text = String(tapCount)
+        } else {
+            countLabel.textColor = UIColor.white
+            countLabel.text = String(tapCount)
+        }
     }
 
 
